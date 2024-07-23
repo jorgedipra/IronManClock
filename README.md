@@ -21,8 +21,16 @@ Este código de reloj muestra la hora actual en una ventana de tkinter. Algunas 
 
 
 ## Screenshots
+```py
+     self.mostrarbarra = True 
+```
+![image](https://github.com/user-attachments/assets/d35d05ad-0084-4798-85aa-902751727392)
+```py
+     self.mostrarbarra = False 
+```
+![image](https://github.com/user-attachments/assets/06dfb24b-3b78-4434-bcdd-617daf329736)
 
-![App Screenshot](https://github.com/jorgedipra/IronManClock/blob/main/view/2024-07-08_11h21_05.png?raw=true])
+
 
 
 ## Installation
