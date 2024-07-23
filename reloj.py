@@ -5,6 +5,9 @@ import time
 # Creamos una clase llamada IronManClock que representa el reloj digital
 class IronManClock:
     def __init__(self):
+        # Inicializamos la variable mostrarbarra En caso de que solo se quiera ver la hora sin los controles
+        self.mostrarbarra = False 
+
         # Inicializamos la ventana principal de la aplicación
         self.window = tk.Tk()
 
@@ -25,9 +28,9 @@ class IronManClock:
         # Asociamos los eventos del ratón para permitir arrastrar la ventana
         self.window.bind("<ButtonPress-1>", self.start_move)
         self.window.bind("<B1-Motion>", self.move_window)
-
-        # Añadimos controles adicionales
-        self.add_controls()
+        if(self.mostrarbarra==True):
+            # Añadimos controles adicionales
+            self.add_controls()
 
         # Actualizamos el reloj y ejecutamos la interfaz gráfica
         self.update_clock()
@@ -77,16 +80,16 @@ class IronManClock:
 
     def add_controls(self):
         # Creamos un marco para los controles adicionales
-        control_frame = tk.Frame(self.window, bg='black')
+        control_frame = tk.Frame(self.window, bg='#353535')
         control_frame.pack(side=tk.BOTTOM, fill=tk.X)
 
         # Botón para cerrar la ventana
-        close_button = tk.Button(control_frame, text="Cerrar", command=self.window.destroy, bg='black', fg='white')
+        close_button = tk.Button(control_frame, text="Cerrar", command=self.window.destroy, bg='#353535', fg='white')
         close_button.pack(side=tk.RIGHT, padx=20, pady=5)
 
         # Botón de opción para siempre en primer plano
         self.always_on_top_var = tk.IntVar()
-        always_on_top_rb = tk.Checkbutton(control_frame, text="Primer plano", variable=self.always_on_top_var, command=self.toggle_always_on_top, bg='black', fg='white', selectcolor='black')
+        always_on_top_rb = tk.Checkbutton(control_frame, text="Primer plano", variable=self.always_on_top_var, command=self.toggle_always_on_top, bg='#353535', fg='white', selectcolor='black')
         always_on_top_rb.pack(side=tk.LEFT, padx=90, pady=5)
 
     def toggle_always_on_top(self):
