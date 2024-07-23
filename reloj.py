@@ -6,7 +6,7 @@ import time
 class IronManClock:
     def __init__(self):
         # Inicializamos la variable mostrarbarra En caso de que solo se quiera ver la hora sin los controles
-        self.mostrarbarra = False 
+        self.mostrarbarra = True 
 
         # Inicializamos la ventana principal de la aplicación
         self.window = tk.Tk()
